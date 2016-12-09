@@ -1,9 +1,6 @@
 class HumanInput:
-    def __init__(self):
-        pass
-
     def ask_user_for_input(self):
-        pass
+        print("Please enter the move number: ")
 
     def get_move_input(self):
         return int(input(""))

@@ -1,4 +1,4 @@
-from .GameBoard import GameBoard
+from .game_board import GameBoard
 
 
 class Game:

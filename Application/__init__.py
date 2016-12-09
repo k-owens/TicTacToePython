@@ -1,3 +1,3 @@
-__all__ = ['GamePlayer', 'HumanInput']
-from Application import GamePlayer
-from Application import HumanInput
+__all__ = ['game_player', 'human_input']
+from Application import game_player
+from Application import human_input

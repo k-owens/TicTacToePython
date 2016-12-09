@@ -1,3 +1,3 @@
-__all__ = ['GameBoard', 'HumanPlayer']
-from GameInfo import GameBoard
-from GameInfo import HumanPlayer
+__all__ = ['game_board', 'human_player']
+from GameInfo import game_board
+from GameInfo import human_player
