@@ -1,8 +1,5 @@
-from .game_board import GameBoard
-
-
 class Game:
-    def __init__(self, player1, player2, game_board=GameBoard(), turn=1):
+    def __init__(self, player1, player2, game_board, turn=1):
         self.player1 = player1
         self.player2 = player2
         self.game_board = game_board
@@ -10,8 +7,13 @@ class Game:
 
     def process_turn(self):
         if self.turn % 2 == 1:
-            self.game_board.change_square(self.player1.make_move(self.game_board), self.player1.player_number)
-            self.turn += 1
+            self._take_turn(self.player1)
+
         else:
-            self.game_board.change_square(self.player2.make_move(self.game_board), self.player2.player_number)
+            self._take_turn(self.player2)
+
+    def _take_turn(self, player):
+        move = player.make_move(self.game_board)
+        if self.game_board.is_move_legal(move):
+            self.game_board.change_square(move, player.player_number)
             self.turn += 1

@@ -5,5 +5,5 @@ class MockInput:
     def ask_user_for_input(self):
         pass
 
-    def get_move_input(self):
+    def get_move_input(self, current_board):
         return 0

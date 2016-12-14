@@ -1,5 +1,8 @@
-class GameBoard: #should game board know what is an illegal move to remove dependencies?
-    def __init__(self, board=[0, 0, 0, 0, 0, 0, 0, 0, 0]):
+class GameBoard:
+    def __init__(self):
+        self.board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+    def set_board(self, board):
         self.board = board
 
     def change_square(self, square_number, player_number):
@@ -7,6 +10,9 @@ class GameBoard: #should game board know what is an illegal move to remove depen
 
     def is_game_over(self):
         return self._did_someone_win() or self._is_board_full()
+
+    def is_move_legal(self, move_number):
+        return self.board[move_number] == 0
 
     def _is_board_full(self):
         return min(self.board) > 0
